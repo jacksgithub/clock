@@ -1,5 +1,5 @@
 /*
- * 2014.04.23 v.1.3
+ * 2014.04.25 v.1.4
  * Display a countdown of the difference between a future date and now.
  *
  * in HTML file: <div id="clock-container"><p id="digits"></p><span id="line"></span></div>
@@ -9,7 +9,6 @@
 function Clock($future_date) {
 // Clock constructor
 
-	var clock = this;
 	this.finished = false;
 	
 	// "constants"
@@ -34,7 +33,7 @@ function Clock($future_date) {
 		else
 		{
 			if( typeof window.timer == 'undefined' )
-				window.timer = setInterval(function(){clock.run();}, 1000);				
+				window.timer = setInterval( this.run.bind(this), 1000 );				
 		};
 		
 		this.mk_digits();
