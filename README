@@ -1,6 +1,6 @@
 Display a countdown of the difference between a future date and now.
 
-Requires jQuery and clock.js.
+Requires jQuery. 
 
 In HTML file: <div id="clock-container"><p id="digits"></p><span id="line"></span></div>
 
