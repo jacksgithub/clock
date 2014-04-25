@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Tom">
+  <meta name="author" content="Tom">
+
+  <title>Tom</title>
+
+  <link rel="stylesheet" href="normalize.css">
+  <link rel="stylesheet" href="clock.css?v=1.0">
+  <!--[if lt IE 9]>
+  	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+</head>
+<body>
+	<div id="clock-container"><p id="digits"></p><span id="line"></span></div>
+	
+	
+	<!--<script src="jquery.min.js"></script>-->
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+	<script src="clock.js"></script>	
+	<script type="text/javascript">
+		
+		$(document).ready(function(){
+			var $running = new Clock('June 20, 2014 20:00:00');		
+		});
+	</script>
+</body>
+</html>
