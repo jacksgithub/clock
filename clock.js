@@ -23,12 +23,15 @@ function Clock($future_date) {
 	this.ELEM	= ($('#clock-container').length == 1) ? $('#clock-container') : this.createElems();
 	this.DIGITS	= $('#digits');
 	this.FUTURE	= new Date($future_date);
-	
+	// UTC offsets: NY -5 (-4 if daylight savings), London 0
+
 	this.run = function()
-	{			
-		this.now	= new Date();		
-		this.diff 	= this.FUTURE - this.now;
-		this.diff	= this.diff.toString();
+	{	
+		// get current time in millis (Date.now()) + UTC offset in millis (offset in mins * 60 * 1000)
+		this.nowMillisUTC	= Date.now() + (new Date().getTimezoneOffset() * 60 * 1000); 
+		this.nowGMT			= new Date(this.nowMillisUTC);
+		this.diff			= this.FUTURE - this.nowGMT;
+		this.diff			= this.diff.toString();
 				
 		if ( this.diff <= 0 )
 		{
