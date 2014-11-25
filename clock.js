@@ -28,7 +28,7 @@ function Clock($future_date) {
 	this.run = function()
 	{	
 		// get current time in millis (Date.now()) + UTC offset in millis (offset in mins * 60 * 1000)
-		this.nowMillisUTC	= Date.now() + (new Date().getTimezoneOffset() * 60 * 1000); 
+		this.nowMillisUTC	= Date.now() - (new Date().getTimezoneOffset() * 60 * 1000); 
 		this.nowGMT			= new Date(this.nowMillisUTC);
 		this.diff			= this.FUTURE - this.nowGMT;
 		this.diff			= this.diff.toString();
