@@ -56,34 +56,61 @@ html {
 	font-size: 62.5%; /* 1em = 10px */
 }
 #clock-container {
-	position: relative;
+	/*position: relative;*/
+	/* http://www.smashingmagazine.com/2013/08/09/absolute-horizontal-vertical-centering-css/ */
+	width: 414px;
+	height: 70px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  text-align: center;
+
 	font-size: 3.5em;
 	text-align: center;
 	font-family: Helvetica, Arial, sans-serif;
 }
+#digits {
+	margin: 0px;
+	padding: 0px;
+}
 .digit {
-	padding: 0.125em 0.2em;
-	margin: 1px;
-	border: 1px solid #ccc;
+	width: 48px;
+    height: 58px;
+    padding: 6px 0px;
+    display: block;
+	float: left;
+	margin: 0px 2px 0px 0px;
+	border: 1px solid #bbb;
 	-webkit-border-radius: 2px;
 	-moz-border-radius: 2px;
 	border-radius: 2px;
-	background: -moz-radial-gradient(center, ellipse cover,  rgba(155,155,155,0.3) 1%, rgba(155,155,155,0.18) 31%, rgba(0,0,0,0) 77%, rgba(0,0,0,0) 78%); /* FF3.6+ */
-	background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(1%,rgba(155,155,155,0.3)), color-stop(31%,rgba(155,155,155,0.18)), color-stop(77%,rgba(0,0,0,0)), color-stop(78%,rgba(0,0,0,0))); /* Chrome,Safari4+ */
-	background: -webkit-radial-gradient(center, ellipse cover,  rgba(155,155,155,0.3) 1%,rgba(155,155,155,0.18) 31%,rgba(0,0,0,0) 77%,rgba(0,0,0,0) 78%); /* Chrome10+,Safari5.1+ */
-	background: -o-radial-gradient(center, ellipse cover,  rgba(155,155,155,0.3) 1%,rgba(155,155,155,0.18) 31%,rgba(0,0,0,0) 77%,rgba(0,0,0,0) 78%); /* Opera 12+ */
-	background: -ms-radial-gradient(center, ellipse cover,  rgba(155,155,155,0.3) 1%,rgba(155,155,155,0.18) 31%,rgba(0,0,0,0) 77%,rgba(0,0,0,0) 78%); /* IE10+ */
-	background: radial-gradient(ellipse at center,  rgba(155,155,155,0.3) 1%,rgba(155,155,155,0.18) 31%,rgba(0,0,0,0) 77%,rgba(0,0,0,0) 78%); /* W3C */
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4d9b9b9b', endColorstr='#00000000',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */			
+	background: none;
+	color: #fff;
+}
+.digit:first-child {
+	margin-left: 0px;
+}
+.digit:last-child {
+	margin-right: 0px;
 }
 #line {
 	height: 1px;
-	background-color: #fff;
-	display: block;
+	background-color: #bfbfbf;
+	display: none;
 	position: absolute;
 	top: 49%;
 	left: 0;
 	width: 100%;
+}
+
+#bg {
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	background: url("img/sd-jetblue-2015.jpg") no-repeat center center;
 }
 
 @media screen and (min-width: 321px) {
