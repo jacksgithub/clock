@@ -1,9 +1,5 @@
 Display a countdown of the difference between a future date and now.
 
-Requires jQuery. 
-
-In HTML file: <div id="clock-container"><p id="digits"></p><span id="line"></span></div>
-
-To init:
-var x = new Clock('future date');
+To init, update in index.html:
+var x = new Clock('<future date>');
 e.g. var clock = new Clock('June 22, 2014 20:00:00');	
